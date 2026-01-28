@@ -1,0 +1,61 @@
+body{
+    background-color: #212121;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nav-container{
+    /* border:1px solid rgb(21, 255, 0); */
+    padding:0px;
+}
+h2{
+    /* border:1px solid rgb(234, 0, 255); */
+    color:aliceblue;
+    margin:10px 0px 5px 0px;
+}
+.nav1{
+    background-color: #515151;
+    /* border:1px solid rgb(140, 0, 255); */
+    margin: 10px;
+    padding:0px 0px 0px 10px;
+    width:120px;
+    height:220px;
+}
+.nav1 ul{
+    /* border:1px solid red; */
+    margin:0px;
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.nav1 li{
+    /* border:1px solid rgb(211, 255, 13); */
+    margin:0 0 20px 0;
+    padding:5px 0px;
+}
+.nav1 a{
+    padding:5px;
+    /* border:1px solid rgb(0, 255, 13); */
+    /* height: 100%; */
+    display: block;
+    width: 105px;
+    color:aliceblue;
+    text-decoration: none;
+}
+.nav1 a:hover{
+    background-color: #ffffff;
+    color:black;
+}
+.nav1 .login-btn{
+    display:block;
+    padding: 5px;
+    width:107px;
+    background-color: #269dff;
+    border:none;
+    color:#ffffff;
+    font-weight: bold;
+}
+.nav1 .login-btn:hover{
+    background-color: #2115ca;
+    border:1px ridge white;
+}

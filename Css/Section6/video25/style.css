@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 5px;
+}
+body{
+    background-color: #212121;
+    color:aliceblue;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.nav1{
+    background-color: #ff0000;
+    border: none;
+    border-radius: 40px;
+}
+h2{
+    margin-bottom: 20px;
+}
+.nav1 ul{
+    list-style-type: none;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav1 a{
+    text-decoration: none;
+    color:aliceblue;
+    display: block;
+}
+.nav1 a:hover{
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:black;
+}
+.nav1 .login-btn{
+    background-color: chartreuse;
+    color:rgb(36, 97, 1);
+    font-weight: bold ;
+    border:none;
+    border-radius: 10px;
+}
+.nav1 .login-btn:hover{
+    background-color: #c300ff;
+    color:rgb(255, 255, 255);
+}
+.nav1 .dropdown-content{
+    display: none;
+    margin:15px 0px 0px 0px;
+    width:100px;
+    padding: 10px;
+    border:1px solid white;
+    border-radius: 20px;
+}
+.nav1 .dropdown:hover .dropdown-content{
+    display: block;
+    background-color: #ff9900;
+    position: absolute;
+}
+.nav1 .dropdown-content:hover{
+    background-color: #ffcb7d;
+}

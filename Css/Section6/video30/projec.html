@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color: #c9c9c9;
+            color:white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container1{
+            background-color: #f1f1f1;
+            height: 400px;
+            width: 250px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding:  0px 3px;
+            border:1px solid rgb(0, 0, 0);
+            border-radius: 40px;
+            box-shadow: 10px 5px 5px rgb(223, 223, 223);
+        }
+        .content{
+            /* border:1px solid red; */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color:#494949;
+        }
+        .content img{
+            height:200px;
+            width: 240px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+        .content h2{
+            /* border: 1px solid black; */
+            margin-top: 0px;
+            margin-bottom: 1px;
+            padding-left: 5px;
+            text-align: left;
+        }
+        .content p{
+            /* border: 1px solid black; */
+            font-style: italic;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: small;
+            padding-left: 8px;
+        }
+        .content h1{
+            /* border: 1px solid black; */
+            color: #000000;
+            margin-bottom: 10px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        h1 span{
+            color:#247e00 ;
+            font-style: italic;
+        }
+        .content .button{
+            /* border: 1px solid black; */
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 0px 10px;
+        }
+        .content #buy-btn{
+            padding:5px;
+            background-color: #000000;
+            color: #ffffff;
+            /* font-weight: 100px; */
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.6s ease-in-out;
+        }
+        .content #cart-btn{
+            padding:5px;
+            background-color: #ff8800;
+            color: #ffffff;
+            /* font-weight: bold; */
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.6s ease-in-out;
+        }
+        .content #buy-btn:hover{
+            background-color: #ffffff;
+            color: #000000;
+            border: 0.5px solid black;
+        }
+        .content #cart-btn:hover{
+            background-color: #ffe600;
+            color: #440000;
+            /* border: 0.5px solid black; */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <div class="content">
+            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/89afa6a48d7d4732b8daaead00ed1b45_9366/Start_Your_Run_Running_Shoes_Black_GY9234_01_standard.jpg" alt="Lumina X1">
+            <h2>Lumina X1</h2>
+            <p>PRO RUNNING</p>
+    
+            <h1><span>$</span>189.00</h1>
+            <div class="button">
+                <button id="buy-btn">Buy Now</button>
+                <button id="cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

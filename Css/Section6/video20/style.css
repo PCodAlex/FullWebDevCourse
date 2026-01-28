@@ -1,0 +1,65 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #212121;
+    color:cornsilk;
+    margin:0;
+    padding: 0;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    text-align: center;
+    background-color: #7c7c7c;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    padding:20px;
+    width:300px;
+}  
+form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    margin-bottom: 20px;
+    padding: 10px;
+    border:1px solid black;
+    border-radius: 10px;
+}
+.name{
+    display: flex;
+    flex-direction: row;
+}
+#fName{
+    width:30%;
+    margin-right: 10px;
+}
+#lName{
+    width:60%;
+}
+
+#logIn{
+    padding: 10px;
+    border:1px solid rgb(94, 177, 255);
+    border-radius: 6px;
+    background-color: rgb(94, 177, 255);
+}
+#signIn{
+    padding: 10px;
+    border:1px solid rgb(255, 153, 94);
+    border-radius: 6px;
+    background-color: rgb(255, 153, 94);
+}
+#logIn:hover{
+    background-color: #003de6;
+    border:1px solid #003de6;
+}
+#signIn:hover{
+    background-color: #ff4545;
+    border:1px solid #ff4545;
+}
+.lastLink{
+    text-decoration: none;
+    color:chartreuse;
+}

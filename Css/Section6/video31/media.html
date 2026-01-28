@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #3a3a3a;
+            color:antiquewhite;
+            height: 100vh;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .paragraph{
+            background-color: rgb(0, 0, 0);
+            padding: 10px;
+        }
+        @media (max-width:600px){
+            .container{
+                align-items: start;
+            }
+            .paragraph{
+                background-color: #360000;
+            }
+        }
+        @media (min-width:601px) and (max-width:1200px){
+            .container{
+                align-items: end;
+            }
+            .paragraph{
+                background-color: #0a3b00;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="paragraph">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure natus velit ratione similique tenetur nobis!</p>
+        </div>
+    </div>
+</body>
+</html>

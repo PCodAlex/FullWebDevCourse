@@ -1,0 +1,58 @@
+/* universal selector */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-color: #212121;
+    color:aliceblue;
+}
+/* type selectors */
+h2{
+    background-color: #17b3da;
+}
+/* id selector */
+#header{
+    background-color: #fffb1c;
+    color:blue;
+    padding:7px;
+}
+/* class selectors */
+.highlight{
+    background-color: chartreuse;
+    color:darkgreen;
+    padding: 5px;
+}
+/*attribute selector*/
+input[type="text"]{
+    background-color: deeppink;
+    color:rgb(0, 0, 0);
+    margin:5px 0px;
+}
+/* descendent selector */
+article p{
+    font-style: italic;
+    background-color: #a0a0a0;
+    margin-bottom: 5px;
+}
+/* adjuscent sibling selector */
+h1+p{
+    font-weight:bold;
+}
+/*general sibling selector*/
+h3~p{
+    background-color: blueviolet;
+}
+/*pseudo class selector*/
+a:hover{
+    text-decoration: none;
+    background-color: #7861ff;
+    color:rgb(30, 0, 68);
+}
+/*pseudo class selector*/
+p::first-letter{
+    font-size: 30px;
+}
+/* group selector */
+h1,h2,h3{
+    border:2px dashed rgb(0, 255, 13);
+}

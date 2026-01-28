@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projectWork</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body{
+            background: #01FBFF;
+            background: linear-gradient(0deg, #01FBFF, #ED01FF);
+            margin: 0px;
+            padding: 10px;
+            height: 100%;
+            width: 100vw;
+        }
+        .carousel{
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            padding:10px;
+            /* border: 1px solid white; */
+            margin-bottom: 10px;
+        }
+        .carousel img{
+            border: none;
+            border-radius: 70px;
+        }
+        .container{
+            /* border: 1px solid white; */
+            width: 100vw;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .container-content{
+            width: 100%;
+            display: grid;
+            /* grid-template-columns: repeat(Auto-Fit,minmax(500px,1fr)) ; */
+            grid-template-columns: repeat(3,1fr);
+            justify-items: center;
+        }
+        .footer{
+            height: 20px;
+            padding:5px;
+            font-weight: bold;
+            font-size: large;
+            /* background-color: #004d4d; */
+        }
+        footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top:5px;
+            background-color: #ff00ea;
+            color:rgb(255, 239, 97);
+        }
+        @media (max-width:600px){
+            .container-content{
+                grid-template-columns: repeat(Auto-Fit,minmax(500px,1fr));
+                gap: 20px;
+            }
+        }
+        @media (min-width:601px) and (max-width:1200px){
+            .container-content{
+                grid-template-columns: repeat(2,2fr);
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" >
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/8ce11c163427185.63e65a3294ae6.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bf0568211807731.672a26909ec7d.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/b95890205864529.66c31bbc0c54c.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container-content">
+        <div class="card" style="width: 18rem;border: none;border-radius: 20px;">
+            <img src="https://wikibiography.in/wp-content/uploads/2025/01/MrBeast-age.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                <a href="https://youtu.be/1WEAJ-DFkHE?si=in2R1iuPQR3EEzal" target="_blank" class="btn btn-outline-danger">YouTube</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;border: none;border-radius: 20px;">
+            <img src="https://win.gg/wp-content/uploads/2024/06/MrBeast_Video.jpg.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                <a href="https://youtu.be/QJI0an6irrA?si=GrFbnjdO0IK_WEEc" target="_blank" class="btn btn-outline-danger">YouTube</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;border: none;border-radius: 20px;">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/230731165043-mrbeast-2022-file.jpg?c=16x9&q=h_833,w_1480,c_fill" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                <a href="https://youtu.be/m9s1NQG3TNY?si=6_YJQIQ2TEpevc53" target="_blank" class="btn btn-outline-danger">YouTube</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="footer">
+        <footer>
+            <p>&copy; akashsamanta@gmail.com all credits reserved</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
