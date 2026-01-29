@@ -20,7 +20,7 @@ console.log(sbiId.getBalance());
 
 class CoffieMachine{
     hotMilk(){
-        console.log("hot milk is mixing with the coffe");
+        console.log("hot milk is mixing with the coffie");
         this.coffeExtract();
     }
     coffeExtract(){
