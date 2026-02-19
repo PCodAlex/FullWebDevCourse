@@ -22,3 +22,5 @@ console.log(gen.next().done)//false
 console.log(gen.next().done)//false
 console.log(gen.next().done)//false
 console.log(gen.next().done)//true
+
+// * --> is the generator and next()--> is the iterator 

@@ -7,10 +7,10 @@ const Person={
     }
 }
 
-Person.greet();
+Person.greet();//hello akash sir/madam
 
 let infoStud=Person.greet
-infoStud();
+infoStud();//hello undefined sir/madam
 
 let infoEmp=Person.greet.bind({name:"ankan"});
-infoEmp();
+infoEmp();//hello ankan sir/madam

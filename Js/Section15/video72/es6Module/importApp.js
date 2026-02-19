@@ -1,5 +1,7 @@
+//named import function
 import {add,sub,div} from "./moduleImport.js"
 
+//default import function
 import mul from "./moduleImport.js";
 // import div from "./moduleImport.js";
 
