@@ -39,22 +39,20 @@ document.addEventListener("DOMContentLoaded",()=>{
     function renderCartItem(){
         let totalPrice=0;
         cartItems.innerHTML='';
-
         if(cart.length>0){
             cart.forEach(c=>{
                 totalPrice+=c.price;
                 const cartItem=document.createElement('div');
-                cartItem.innerHTML=`<span>${c.name}</span> --- <span>$${c.price}</span>`;
+                cartItem.innerHTML=`<span>${c.name}</span>---<span>$${c.price}</span>`;
                 cartItems.appendChild(cartItem);
             });
-
-            emptyCartMessage.classList.add('hidden');     // hide empty msg
-            cartTotalMessage.classList.remove('hidden');  // show total
+            emptyCartMessage.classList.add('hidden');
+            cartTotalMessage.classList.remove('hidden');
             totalPriceDisplay.textContent=totalPrice;
-
+            
         }else{
-            emptyCartMessage.classList.remove('hidden');  // show empty msg
-            cartTotalMessage.classList.add('hidden');     // hide total msg
+            // cartTotalMessage.classList.remove('hidden');
+            emptyCartMessage.classList.remove('hidden');
             totalPriceDisplay.textContent='0.00';
         }
     }
