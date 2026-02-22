@@ -1,0 +1,534 @@
+Basic terminal commands (full form + meaning):
+
+cd → Change Directory
+cls → Clear Screen (Windows)
+clear → Clear terminal (Linux/Mac)
+mkdir → Make Directory
+rmdir → Remove Directory
+ls → List files/folders
+pwd → Print Working Directory
+rm → Remove file
+cp → Copy
+mv → Move
+
+---ls -la full form:
+
+ls → List (show files and folders)
+
+-l → Long listing format (shows details like size, permission, date)
+
+-a → All files (shows hidden files also)
+
+👉 So ls -la means:
+List all files and folders (including hidden) in long detailed format.---
+
+Most used Git commands (shortcuts + meaning)
+
+git init → Initialize new repository
+git clone → Copy repo from GitHub
+git status → Check repo status
+git add . → Add all files to staging
+git add fileName → Add specific file
+git commit -m "msg" → Save changes with message
+git push → Upload code to GitHub
+git pull → Download latest code
+git fetch → Fetch updates only
+git branch → Show branches
+git branch name → Create branch
+git checkout name → Switch branch
+git checkout -b name → Create + switch branch
+git merge branch → Merge branch
+git log → Show commit history
+git diff → Show changes
+git remote add origin URL → Connect to GitHub repo
+git reset → Undo changes
+git stash → Temporarily save changes
+
+******************************************************************************
+👉 VIM = Vi Improved (text editor in terminal)
+
+It opens when Git needs a message.
+
+Example:
+
+git commit
+git merge
+git rebase
+
+If you don’t give -m "msg" → Git opens VIM editor to write message.
+
+Screen looks like:
+
+# Write commit message
+# Press i to insert
+Basic VIM keys
+
+Press i → insert mode (type message)
+
+Press Esc
+
+Type :wq → save & exit
+
+Type :q! → exit without save
+
+👉 Git uses VIM to write commit/merge messages.
+******************************************************************************
+
+***git --version / git -v -> print the git version in terminal***
+
+1.git init:
+    git add fileName.extension / *
+2.git status
+3.git log / git log --oneline
+4.git commit -m "message"
+5.git push 
+
+---------------------git commit -am "message"---------------------------
+am means adding and commiting 
+
+                 ┌──────────────┐
+                 │   GitHub     │  (Online cloud repository)
+                 └──────▲───────┘
+                        │ git push
+                        │ git pull / clone
+                 ┌──────┴───────┐
+                 │  Local Repo   │ (.git folder created by git init)
+                 └──────▲───────┘
+                        │ git commit
+                        │
+                ┌───────┴────────┐
+                │ Staging Area    │ (Index)
+                │ git add         │
+                └──────▲──────────┘
+                       │
+                       │ edit/create files
+                ┌──────┴──────────┐
+                │ Working Directory│
+                │(your project)init│
+                └──────────────────┘
+
+(esc+:+q or q+!) for quite 
+
+git config --global user.name "name"
+git config --global user.email "email@gmail.com"
+git config --global core.editor "code --wait"
+
+***.gitignore --> worked for file like .env and .vscode 
+                .env
+                foldername.extension
+                node.modules/
+
+***.gitignore generator
+
+cat .gitconfig 
+
+********************Branch********************
+
+git branch branchName -> create a branch
+git checkout branchName -> switch to that created branch if it is exist
+git switch branchName -> switch to that created branch if it is exist
+
+git checkout -b branchName -> switch to that branch if it is not exist it will create 
+git switch -c branchName -> switch to that branch if it is not exist it will create 
+
+git branch -d branchName -. delete the branch
+
+*git merge branchName
+
+there are two types of merging present in the branch system 
+1.fast forward merge
+main:    A---B
+feature:       C---D
+
+After merge:
+
+main:    A---B---C---D
+
+2.not fast forward merge 
+main:    A---B---E
+feature:       C---D
+
+After merge:
+
+main: A---B---E
+          \    \
+           C----D
+                \
+                 M (merge commit)
+
+
+🔥 Force Non Fast Forward Merge (with message)
+
+Sometimes interviewer asks this 🔥
+
+git merge --no-ff feature -m "merged feature branch"
+
+--no-ff → force merge commit
+
+-m → message for merge commit
+
+🧨 Merge Conflict (Important interview topic)
+When conflict happens?
+
+When same file same line edited in both branches.
+
+Example:
+
+main branch:     Hello Java
+feature branch:  Hello Python
+
+Git cannot decide → conflict
+
+⚠️ After conflict you will see
+CONFLICT (content): Merge conflict in file.txt
+
+File will look like:
+
+<<<<<<< HEAD
+Hello Java
+=======
+Hello Python
+>>>>>>> feature
+🛠 How to solve conflict
+1️⃣ Open file and edit manually
+
+Choose correct code:
+
+Hello Java & Python
+
+Remove:
+
+<<<<<<< ======= >>>>>>>
+2️⃣ Add again
+git add fileName
+3️⃣ Commit merge
+git commit -m "conflict resolved"
+
+******************** git diff & stashing ********************
+
+🟣  git diff (very important)
+👉 Purpose:
+
+Shows changes between files/commits
+
+git diff
+
+Shows changes not staged yet.
+
+Symbols in git diff
+
+Example:
+
+- Hello Java
++ Hello Python
+
+Meaning:
+
+- → removed line
+
++ → added line
+
+white line → unchanged
+
+@@ -1,4 +1,4 @@
+
+Shows line numbers changed.
+
+Types of git diff commands
+1️⃣ See unstaged changes
+git diff
+2️⃣ See staged changes
+git diff --staged
+3️⃣ Compare commits
+git diff commit1 commit2
+4️⃣ Compare branches
+git diff main feature
+5️⃣ Check one file diff
+git diff fileName
+
+
+                            STASH
+
+
+git stash 
+git stash pop
+git stash apply 
+
+stash list 
+
+🟣  Git Stash (very important 🔥)
+👉 Stash = temporarily save work without commit
+
+Suppose coding not finished but need branch switch.
+
+git stash
+
+Git saves work and makes folder clean.
+
+Commands of stash
+1️⃣ Save stash
+git stash
+2️⃣ See stash list
+git stash list
+
+Output:
+
+stash@{0}
+stash@{1}
+3️⃣ Apply stash (keep stash also)
+git stash apply
+4️⃣ Pop stash (apply + delete)
+git stash pop
+5️⃣ Apply specific stash
+git stash apply stash@{1}
+6️⃣ Delete stash
+git stash drop stash@{0}
+7️⃣ Clear all stash
+git stash clear
+
+
+                       Important checkout/restore commands
+
+
+1️⃣ git checkout <hash>
+
+Move to specific commit.
+
+git checkout a1b2c3
+
+HEAD moves to that commit
+(Detached HEAD state)
+
+Used to see old code.
+
+2️⃣ git switch main
+
+Modern command to switch branch.
+
+git switch main
+
+Better than checkout.
+
+3️⃣ git checkout HEAD~2
+
+👉 Move 2 commits back.
+
+HEAD~1 → one commit back
+HEAD~2 → two commits back
+
+Used to see previous version.
+
+4️⃣ git restore fileName
+
+Restore file to last commit.
+
+git restore index.html
+
+Undo changes in file.
+
+If staged:
+
+git restore --staged fileName            '
+
+
+                                   git reflog 
+
+
+🟣 Git Reflog (🔥 most powerful)
+👉 reflog = history of HEAD movements
+
+Shows everything:
+
+commits
+
+resets
+
+deletes
+
+checkouts
+
+Command:
+
+git reflog
+
+Example output:
+
+a1b2c3 HEAD@{0}: commit: added login
+d4e5f6 HEAD@{1}: checkout: moving to main
+Why reflog important?
+
+If you delete commit accidentally 😱
+You can recover.
+
+git checkout commitHash
+
+or
+
+git reset --hard hash
+
+Reflog = Git recovery tool
+
+
+******************** git rebase ********************
+
+🟣 1️⃣ What is Git Rebase?
+
+👉 Rebase = move your branch on top of another branch
+
+Instead of creating a merge commit, it rewrites history and makes it clean & linear.
+
+🟣 2️⃣ Why We Use Rebase?
+
+✅ Clean commit history
+✅ No unnecessary merge commits
+✅ Makes project history straight line
+✅ Preferred in professional workflow
+
+🟣 3️⃣ How Rebase Works (GitLens Graph Style)
+🧠 Suppose this situation:
+main:     A --- B --- C
+                   \
+feature:             D --- E
+
+Now main got new commit C
+
+If you run:
+
+git checkout feature
+git rebase main
+👉 What Git does internally:
+
+Remove commits D, E
+
+Move feature to C
+
+Re-apply D, E on top
+
+🔥 After Rebase (GitLens graph view)
+main:     A --- B --- C
+                          \
+feature:                    D' --- E'
+
+⚠️ Notice:
+D and E become D' and E'
+(New commit IDs created)
+
+👉 No merge commit
+👉 Clean history
+
+🟣 4️⃣ Types of Rebase
+1️⃣ Normal Rebase
+git rebase main
+2️⃣ Interactive Rebase (🔥 very powerful)
+git rebase -i HEAD~3
+
+Used to:
+
+Edit commit message
+
+Squash commits
+
+Delete commits
+
+Reorder commits
+
+You will see:
+
+pick 1234 commit1
+pick 5678 commit2
+
+You can change:
+
+pick
+
+squash
+
+reword
+
+drop
+
+3️⃣ Rebase Onto
+
+Advanced:
+
+git rebase --onto branchA branchB
+
+🟣 5️⃣ Why Rebase Not Recommended on main/master?
+
+⚠️ Because rebase rewrites history
+
+If main is shared on GitHub:
+
+Rewriting history =
+
+Other developers will face problems
+
+Push will require --force
+
+Can break team workflow
+
+👉 Rule:
+
+✔️ Rebase on your feature branch
+❌ Don’t rebase shared main branch
+
+Professional rule:
+
+Feature branch → rebase on main
+Main branch → use merge
+
+🟣 6️⃣ Rebase Conflict
+
+Conflict happens when:
+
+Same file same line edited in both branches.
+
+During rebase, Git stops and shows:
+
+CONFLICT (content): Merge conflict in file.txt
+
+File will show:
+
+<<<<<<< HEAD
+old code
+=======
+new code
+>>>>>>> commitID
+
+🟣 7️⃣ How to Fix Rebase Conflict
+Step 1: Resolve manually
+
+Edit file
+
+Step 2:
+git add fileName
+Step 3:
+git rebase --continue
+
+🟣 8️⃣ What is --continue ?
+git rebase --continue
+
+👉 After resolving conflict
+👉 Tells Git: "Continue applying next commit"
+
+🟣 9️⃣ What is --abort ?
+git rebase --abort
+
+👉 Cancels rebase
+👉 Returns branch to original state
+
+Very useful if too many conflicts 😅
+
+🟣 10️⃣ Merge vs Rebase (Quick Difference)
+Merge	Rebase
+Creates merge commit	No merge commit
+Keeps history true	Rewrites history
+Safe for shared branch	Risky on shared branch
+Graph looks complex	Graph looks clean
+🟣 11️⃣ Visual Final Comparison
+Merge graph
+A---B---C
+     \    \
+      D----E----M
+Rebase graph
+A---B---C---D'---E'
