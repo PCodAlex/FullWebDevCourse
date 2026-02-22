@@ -532,3 +532,89 @@ A---B---C
       D----E----M
 Rebase graph
 A---B---C---D'---E'
+
+********************git bash and git hub *********************
+
+ssh-> Secure Shell 
+ssh key should be generated 
+
+git branch -M main -> it will change the master branch name into main 
+
+git remote -v
+git remote add *name*[in github we use origin] *url*
+
+git remote reName oldName newName 
+git remote remove name 
+
+git push <remote> <branch> 
+git push -u origin main
+-u -> upstream [linking origin with main]
+--set --upstream -> upstream 
+
+🔥 git fetch vs git pull (with diagram)
+🟣 git fetch
+
+👉 Downloads latest code from GitHub
+👉 Does NOT merge into your branch
+👉 Safe to check updates first
+
+Command:
+
+git fetch
+Diagram:
+GitHub (remote repo)
+        │
+        │ git fetch
+        ▼
+Local repo (only download)
+        │
+        └── Your working code unchanged
+
+After fetch you can check:
+
+git log
+git diff
+🟣 git pull
+
+👉 Downloads + merges into your branch
+👉 Directly updates your project
+
+Command:
+
+git pull
+Diagram:
+GitHub (remote repo)
+        │
+        │ git pull
+        ▼
+Local repo updated
+        │
+        ▼
+Working directory updated
+🧠 Internal truth (interview question 🔥)
+
+git pull = git fetch + git merge
+
+First fetch
+Then merge automatically
+
+🟣 Visual Difference
+git fetch
+GitHub:   A---B---C
+Local:    A---B
+
+After fetch:
+Local knows C exists
+But code not merged
+git pull
+GitHub:   A---B---C
+Local:    A---B
+
+After pull:
+Local:    A---B---C
+Code updated
+🧠 When to use what?
+
+✔️ Use fetch → when working in team (safe check)
+✔️ Use pull → when you want direct update
+
