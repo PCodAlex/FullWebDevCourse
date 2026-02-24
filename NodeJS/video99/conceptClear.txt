@@ -1,0 +1,243 @@
+Perfect 👌 Let’s understand this **HTTP server code** very shortly but clearly from top to bottom.
+
+---
+
+# 🔹 1️⃣ Importing Modules
+
+```js
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+```
+
+### ✅ http
+
+Used to create a web server.
+
+### ✅ fs
+
+Used to read files (HTML, CSS, JS, images).
+
+### ✅ path
+
+Used to safely handle file paths.
+
+---
+
+# 🔹 2️⃣ Port
+
+```js
+const port = 3003;
+```
+
+Server will run at:
+
+```
+http://localhost:3003
+```
+
+---
+
+# 🔹 3️⃣ Create Server
+
+```js
+const server = http.createServer((req, res) => {
+```
+
+* `req` → request from browser
+* `res` → response to browser
+
+This function runs **every time someone visits your server**.
+
+---
+
+# 🔹 4️⃣ File Path Logic
+
+```js
+const filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
+```
+
+### What this does:
+
+If user visits:
+
+```
+http://localhost:3003/
+```
+
+👉 Loads `index.html`
+
+If user visits:
+
+```
+http://localhost:3003/style.css
+```
+
+👉 Loads `style.css`
+
+---
+
+### `__dirname`
+
+Current folder where server file exists.
+
+---
+
+# 🔹 5️⃣ Get File Extension
+
+```js
+const extName = String(path.extname(filePath)).toLowerCase();
+```
+
+If file is:
+
+* `index.html` → `.html`
+* `style.css` → `.css`
+* `app.js` → `.js`
+
+---
+
+# 🔹 6️⃣ MIME Types
+
+```js
+const mimeTypes = {
+    '.html':'text/html',
+    '.css':'text/css',
+    '.js':'text/javascript',
+    '.png':'text/png'
+};
+```
+
+### What is MIME type?
+
+It tells browser **what kind of file it is**.
+
+Example:
+
+| File | MIME Type       |
+| ---- | --------------- |
+| html | text/html       |
+| css  | text/css        |
+| js   | text/javascript |
+
+---
+
+# 🔹 7️⃣ Content Type Selection
+
+```js
+const contentType = mimeTypes[extName] || 'application/octet-stream';
+```
+
+If extension exists → use correct type
+If not → use default type
+
+---
+
+# 🔹 8️⃣ Read File
+
+```js
+fs.readFile(filePath,(error,content)=>{
+```
+
+Asynchronously reads the file.
+
+---
+
+## If Error
+
+```js
+if(error){
+    if(error.code==='ENOENT'){
+```
+
+`ENOENT` = file not found
+
+---
+
+```js
+res.writeHead(404,{'content-type':'text.html'});
+res.end('404 : file not found bro');
+```
+
+Sends 404 response.
+
+⚠ Small mistake here:
+`text.html` should be `text/html`
+
+---
+
+## If File Found
+
+```js
+res.writeHead(200,{'content-type':contentType});
+res.end(content,'utf-8')
+```
+
+* 200 = success
+* Sends file content to browser
+
+---
+
+# 🔹 9️⃣ Start Server
+
+```js
+server.listen(port,()=>{
+    console.log(`server is listening on port ${port}`);
+});
+```
+
+Starts server.
+
+---
+
+# 🔹 🔥 Full Flow Example
+
+### When user types in browser:
+
+```
+http://localhost:3003/
+```
+
+Flow:
+
+1. Request comes
+2. `req.url === '/'`
+3. Loads `index.html`
+4. Detects `.html`
+5. Sends `text/html`
+6. Browser renders page
+
+---
+
+# 🔹 🧠 What You Built
+
+You created:
+
+✔ Static File Server
+✔ Manual MIME Handling
+✔ Custom 404 Page
+✔ Basic Node.js Web Server
+
+This is how Express works internally 🔥
+
+---
+
+# 🔹 ⚡ Small Improvements
+
+1. Fix typo:
+
+```js
+'text.html' → 'text/html'
+```
+
+2. Add more MIME types:
+
+```js
+'.jpg':'image/jpeg',
+'.json':'application/json'
+```
+
+3. Handle all errors (not only ENOENT)
+
+---
+
